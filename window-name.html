@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="created" content="2012-07-26">
+<title>Window Name</title>
+<link rel="stylesheet" href="http://yui.yahooapis.com/3.5.1/build/cssreset/reset-min.css">
+<link rel="stylesheet" href="http://yui.yahooapis.com/3.5.1/build/cssfonts/fonts-min.css">
+<script type="text/javascript" src="http://yui.yahooapis.com/3.5.1/build/yui/yui-min.js"></script>
+<style type="text/css">
+
+</style>
+</head>
+<body>
+    <div>window.name = <span class="ans"></span>;</div>
+    <a href="#set" class="set-link">Set window.name to current timestamp</a> |
+    <a href="#redirect" class="redirect-link">Redirect To Another Page</a>
+    <script>
+    YUI().use('node-base', function (Y) {
+
+        Y.one(".ans").setContent(window.name);
+
+        Y.one(".set-link").on("click", function (e) {
+            e.preventDefault();
+            var stamp = "awoo-" + parseInt(new Date().getTime());
+            Y.one(".ans").setContent(stamp);
+            window.name = stamp;
+        });
+
+        Y.one(".redirect-link").on("click", function (e) {
+            e.preventDefault();
+
+            var href = location.href,
+                url,
+                num;
+
+            if (href.indexOf("?") === -1) {
+                url = href;
+                num = 1;
+            } else {
+                url = href.split("?")[0];
+                num = parseInt(href.split("?")[1], 10) + 1;
+            }
+            location.href = url + "?" + num;
+        });
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="created" content="2012-07-26">
+<title>CSS3 Animation</title>
+<link rel="stylesheet" href="http://yui.yahooapis.com/3.5.1/build/cssreset/reset-min.css">
+<link rel="stylesheet" href="http://yui.yahooapis.com/3.5.1/build/cssfonts/fonts-min.css">
+<script type="text/javascript" src="http://yui.yahooapis.com/3.5.1/build/yui/yui-min.js"></script>
+<style type="text/css">
+@-webkit-keyframes pulse {
+    from {
+        opacity: 0.0;
+        font-size: 100%;
+    }
+    to {
+        opacity: 1.0;
+        font-size: 200%;
+    }
+}
+div {
+    -webkit-animation-name: pulse;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-direction: alternate;
+}
+</style>
+</head>
+<body>
+    <div>Zzz...</div>
+</body>
+</html>

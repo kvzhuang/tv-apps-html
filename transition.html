@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="created" content="2012-07-26">
+<title>CSS3 Transitions</title>
+<link rel="stylesheet" href="http://yui.yahooapis.com/3.5.1/build/cssreset/reset-min.css">
+<link rel="stylesheet" href="http://yui.yahooapis.com/3.5.1/build/cssfonts/fonts-min.css">
+<script type="text/javascript" src="http://yui.yahooapis.com/3.5.1/build/yui/yui-min.js"></script>
+<style type="text/css">
+.box {
+    width: 500px;
+    height: 500px;
+    background: pink;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-transition: top 1s ease-in-out;
+}
+.box-hidden {
+    top: -500px;
+}
+.toggle-button {
+    border-radius: 10px;
+    background: #efefef;
+    color: #333;
+    font-weight: bold;
+    padding: 5px;
+    position: fixed;
+    text-decoration: none;
+    right: 0;
+    top: 0;
+}
+</style>
+</head>
+<body>
+    <div class="box">Box</div>
+    <a href="#hide-box" class="toggle-button">Hide Box</a>
+    <script>
+    YUI().use("node-base", function (Y) {
+        Y.one(".toggle-button").on("click", function (e) {
+            e.preventDefault();
+            Y.one(".box").toggleClass("box-hidden");
+        });
+    });
+    </script>
+</body>
+</html>

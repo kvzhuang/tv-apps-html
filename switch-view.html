@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="created" content="2012-07-26">
+<title>Switch View</title>
+<link rel="stylesheet" href="http://yui.yahooapis.com/3.5.1/build/cssreset/reset-min.css">
+<link rel="stylesheet" href="http://yui.yahooapis.com/3.5.1/build/cssfonts/fonts-min.css">
+<script type="text/javascript" src="http://yui.yahooapis.com/3.5.1/build/yui/yui-min.js"></script>
+<style type="text/css">
+.box {
+    width: 500px;
+    height: 500px;
+    font-size: 50px;
+    background: pink;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-transition: opacity 2s ease-out;
+}
+#welcome {
+    background-color: yellow;
+}
+#loading {
+    background-color: red;
+}
+#player {
+    background-color: blue;
+}
+#playlist {
+    background-color: #999;
+}
+.show {
+    z-index: 1;
+    opacity: 1;
+}
+.hide {
+    z-index: 0;
+    opacity: 0;
+}
+</style>
+</head>
+<body>
+    <div>
+        <div id="welcome" class="box show">#welcome</div>
+        <div id="loading" class="box hide">#loading</div>
+        <div id="player" class="box hide">#player</div>
+        <div id="playlist" class="box hide">#playlist</div>
+    </div>
+    <script>
+    YUI().use("node-base", "node-style", function (Y) {
+        var _box = Y.one("#welcome");
+        var photos =[
+            "http://farm8.staticflickr.com/7139/7648735554_94a8efa0ec.jpg",
+            "http://farm9.staticflickr.com/8159/7647118480_c65096efa9.jpg",
+            "http://farm9.staticflickr.com/8143/7633022640_9458e068e6.jpg",
+            "http://farm8.staticflickr.com/7115/7613968540_18cdc19e74.jpg",
+            "http://farm9.staticflickr.com/8165/7648734346_55b3ca480d.jpg"
+        ];
+        var i = 0;
+        Y.later(5000, null, function () {
+            _box.replaceClass("show", "hide");
+            if (_box.next()) {
+                _box = _box.next();
+            } else {
+                _box = Y.one("#welcome");
+            }
+            i = (i + 1 === photos.length) ? 0 : i + 1;
+            _box.setStyle("backgroundImage", "url('" + photos[i] + "?" + parseInt(new Date().getTime()) + "')");
+            Y.later(100, _box, function () {
+                this.replaceClass("hide", "show");
+            });
+        }, null, true);
+    });
+    </script>
+</body>
+</html>

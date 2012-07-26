@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="created" content="2012-07-26">
+<title>CSS Opacity</title>
+<link rel="stylesheet" href="http://yui.yahooapis.com/3.4.1/build/cssreset/reset-min.css">
+<link rel="stylesheet" href="http://yui.yahooapis.com/3.4.1/build/cssfonts/fonts-min.css">
+<script type="text/javascript" src="http://yui.yahooapis.com/3.4.1/build/yui/yui-min.js"></script>
+<style type="text/css">
+html {
+    background: #eee url(http://fc09.deviantart.net/fs70/f/2010/229/7/c/My_D_ck_In_a_Box_by_xBWCx.png) center 0 no-repeat;
+    background-size: 80%;
+}
+body {
+    text-align: center;
+    vertical-align: middle;
+}
+#foo {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+.foo-content {
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: bold;
+    font-size: 50px;
+    background: rgba(255, 0, 0, 0.5);
+    display: inline-block;
+    width: 500px;
+    height: 500px;
+
+}
+.wrapper {
+    position: absolute;
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+.wrapper * {
+    text-align: center;
+    vertical-align: middle;
+}
+</style>
+</head>
+<body>
+    <div class="wrapper">
+        <div id="foo">
+            <div class="foo-content">Opacity is useful. </div>
+        </div>
+    </div>
+</body>
+</html>
