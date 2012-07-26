@@ -9,7 +9,7 @@ The following files is for compatibility testing.
 * [animation.html](http://josephj.com/lab/2012/qt-webkit/animation.html)
 * [border-radius.html](http://josephj.com/lab/2012/qt-webkit/border-radius.html)
 * [box-reflect.html](http://josephj.com/lab/2012/qt-webkit/box-reflect.html)
-* [box-shadow.html](http://josephj.com/lab/2012/qt-webkit/box-shadow.htm)
+* [box-shadow.html](http://josephj.com/lab/2012/qt-webkit/box-shadow.html)
 * [data-uri.html](http://josephj.com/lab/2012/qt-webkit/data-uri.html)
 * [gradient.html](http://josephj.com/lab/2012/qt-webkit/gradient.html)
 * [long-scroll.php](http://josephj.com/lab/2012/qt-webkit/long-scroll.php)
