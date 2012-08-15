@@ -2,6 +2,15 @@
 
 HTML guidelines and test files for miiiTV apps.
 
+
+## Viewport
+
+* position: absolute;
+* height: 700px;
+* left: 25px;
+* top: 0;
+* width: 1228px;
+
 ## Test Files
 
 The following files is for compatibility testing.
