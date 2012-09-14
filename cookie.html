@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Large Image</title>
+<link rel="stylesheet" href="http://yui.yahooapis.com/3.6.0/build/cssreset/reset-min.css">
+<style type="text/css">
+html, body {
+    padding: 0;
+    margin: 0;
+}
+.doc {
+    width: 1280px;
+    height: 720px;
+}
+/* 以上的部份不要修改、以下的部份自由修改 */
+html, body {
+    background: #fff;
+}
+.content {
+    background: red;
+    width: 1280px;
+    height: 720px;
+}
+</style>
+</head>
+<body>
+    <div class="doc">
+        <div class="content">Cookie Time = <span id="foo"></span></div>
+    </div>
+    <script type="text/javascript" src="http://yui.yahooapis.com/3.4.1/build/yui/yui-min.js"></script>
+    <script>
+    YUI().use('node-base', 'cookie', function (Y) {
+        var cookieTime = Y.Cookie.get("cookieTime");
+
+        if (!cookieTime) {
+            cookieTime = parseInt(new Date().getTime());
+            Y.Cookie.set("cookieTime", cookieTime, {
+                expires: new Date("January 12, 2025")
+            });
+        } else {
+            Y.one("#foo").setContent(cookieTime);
+        }
+
+    });
+    </script>
+</body>
+</html>

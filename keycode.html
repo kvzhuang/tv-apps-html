@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>KeyCode</title>
+<link rel="stylesheet" href="http://yui.yahooapis.com/3.6.0/build/cssreset/reset-min.css">
+<script type="text/javascript" src="http://yui.yahooapis.com/3.4.1/build/yui/yui-min.js"></script>
+<style type="text/css">
+html, body {
+    padding: 0;
+    margin: 0;
+}
+.doc {
+    width: 1280px;
+    height: 720px;
+}
+/* 以上的部份不要修改、以下的部份自由修改 */
+html, body {
+    background: #fff;
+}
+.content {
+    background: red;
+    width: 1280px;
+    height: 720px;
+}
+</style>
+</head>
+<body>
+    <div class="doc">
+        <div class="content">
+            <h1>KeyCode</h1>
+            <ul>
+
+            </ul>
+        </div>
+    </div>
+    <script>
+    YUI().use("event", function (Y) {
+        var node = Y.one("ul");
+        Y.on("keyup", function (e) {
+            node.append("<li>" + e.keyCode + "</li>");
+        });
+    });
+    </script>
+</body>
+</html>

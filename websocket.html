@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>WebSocket</title>
+<style type="text/css">
+html, body {
+    padding: 0;
+    margin: 0;
+}
+.doc {
+    width: 1280px;
+    height: 720px;
+}
+/* 以上的部份不要修改、以下的部份自由修改 */
+html, body {
+    background: #fff;
+}
+.content {
+    width: 1280px;
+    height: 720px;
+    overflow: hidden;
+}
+</style>
+</head>
+<body>
+    <div class="doc">
+        <div class="content">
+            <script>
+            if (typeof(WebSocket) != "undefined") {
+                document.write("ok");
+            } else {
+                document.write("fail");
+            }
+            </script>
+        </div>
+    </div>
+</body>
+</html>

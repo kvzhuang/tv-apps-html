@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>XHR.getHTML()</title>
+<link rel="stylesheet" href="http://yui.yahooapis.com/3.6.0/build/cssreset/reset-min.css">
+<link rel="stylesheet" href="http://yui.yahooapis.com/3.6.0/build/cssbase/base-min.css">
+<style type="text/css">
+html, body {
+    padding: 0;
+    margin: 0;
+}
+.doc {
+    width: 1280px;
+    height: 720px;
+    overflow: hidden;
+}
+html, body {
+    background: #fff;
+}
+.content {
+    padding: 10px;
+    font-size: 9px;
+    font-family: Verdana;
+}
+</style>
+</head>
+<body>
+    <div class="doc">
+        <div class="content">
+            <h1>XHR.getHTML()</h1>
+            <div id="output"></div>
+         </div>
+    </div>
+    <script src="http://yui.yahooapis.com/3.6.0/build/yui/yui-min.js"></script>
+    <script>
+    YUI().use("node-base", function (Y) {
+        var url = "http://www.youtube.com/get_video_info?video_id=aCf7RUoosww";
+        if (typeof XHR === "undefined") {
+            alert("Your browser doesn't support XHR.getHTML method");
+            return;
+        }
+        XHR.getHTML(url, function (html) {
+            Y.one("#output").setContent(html);
+        });
+    });
+    </script>
+</body>
+</html>
